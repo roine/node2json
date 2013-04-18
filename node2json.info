@@ -1,0 +1,5 @@
+
+name = Node 2 JSON
+description = create a json view of each nodes
+core = 7.x
+

@@ -1,0 +1,15 @@
+<?php 
+function node2json_menu() { 
+  $items['node/%node/json'] = array(
+    'page callback' => 'node2json_endpoint',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+function node2json_endpoint($node) {
+	$cleanNode['title'] = $node->title;
+	$cleanNode['body'] = $node->body['und'][0]['value'];
+	drupal_json_output($cleanNode);
+}
